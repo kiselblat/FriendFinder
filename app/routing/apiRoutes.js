@@ -1,12 +1,17 @@
+var friends = require('../data/friends.js')
+
 module.exports = function(app) {
 
+  app.get('/api/friends', function(request, response) {
+    return response.json(friends);
+  });
   
-  app.post('/submit', function(request , response) {
-    var signal = request.body;
-    // console.log(request.params);
-    console.log(signal);
+  app.post('/api/friends', function(request , response) {
+    var newFriend = request.body;
     
-    response.json("This is the signal: " + signal.data);
+    console.log(newFriend);
+    
+    response.json("New friend: " + newFriend);
   });
 
 

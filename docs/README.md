@@ -24,14 +24,44 @@ node server.js
 Then open your browser of choice and enter the following into the url bar:
 
 ```url
-localhost:3000
+localhost:8080
 ```
 
 The home page should display, you can then follow the link and fill out the survey.
 
 ## How it Works
 
+Friend Finder is a node server running a primitive api with a data source called `friends.js`, which in this case is simply an array of objects containing a name, a link to an image, and an array of survey scores.
 
+1. [Server](#serverjs)
+1. [Routing](#routing)
+1. [Public](#public)
+
+### `server.js`
+
+Run this file to start the Friend Finder server. This file does little more than import express and the two routing files, and then start listening on the `PORT` given to by the computer, or the default value: `8080`.
+
+### Routing
+
+The server responds to requests from users along a number of predefined routes. These are defined in `/app/routing/htmlRoutes.js` and `/app/routing/apiRoutes.js`. These routes are executed by `server.js`.
+
+#### `htmlRoutes.js`
+
+This file defines three routes that deliver html to the users browser: 
+
+`/` and it throws out `home.html`, a brief introductory website with relevent links to the survey and finder itself and also the entire api.
+
+`/survey` sends `survey.html`, which includes the Friend Finder surey and the code to send the information to the api and display the response appropriately. 
+
+The third and final route takes any other url besides the first two and redirects it to `/`.
+
+#### `apiRoutes.js`
+
+This file defines two routes for interacting with the `friends` api through `/api/friends`.
+
+The first is a GET that simply returns the contents of the friends api by returning the entire array in the form of a JSON.
+
+The second is a POST that takes in a `newFriend` object, compares the survey results to each other friend, and replies to the page with the closest match.
 
 ## About
 

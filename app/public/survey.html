@@ -13,21 +13,32 @@
 <body>
 
   <div class="container">
+
     <div class="jumbotron">
       <h1>Friend Finder</h1>
       <h3>Complete this survey to be matched with a suitable human!</h3>
       <hr>
-      <!-- <a href="/"><button class="btn btn-danger btn-lg"><span class="fa fa-eye"></span> View Characters</button></a> -->
+      <a href="/">
+        <button class="btn btn-success btn-lg">
+          <span class="fa fa-home"></span>Back Home</button>
+      </a>
+      <a href="/api/friends">
+        <button class="btn btn-success btn-lg">
+          <span class="fa fa-eye"></span> View Friends</button>
+      </a>
     </div>
-    <div class="row">
 
+    <div class="row">
       <div class="col-12">
 
         <div class="card">
+
           <div class="card-header">
             <h3><strong>Survey Questions</strong></h3>
           </div>
+
           <div class="card-body">
+
             <form method="POST" role="form">
 
               <div class="form-group">
@@ -40,7 +51,7 @@
                 <input type="text" class="form-control" id="image-link">
               </div>
 
-              <hr>
+              <!-- TODO: Add Questions -->
 
               <h3><strong>Question One</strong></h3>
               <h4>This is the n question</h4>
@@ -223,25 +234,35 @@
               </div>
 
             </form>
-            <br>
-            <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="find-btn"><span class="fa fa-fire"></span> Find A Friend</button>
-            </div>
-          </div>
-        </div>
 
+          </div>
+          
+          <div class="card-footer">
+            
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="find-btn">
+                <span class="fa fa-magic"></span> Find A Friend</button>
+            </div>
+
+          </div>
+
+        <!-- card -->
+        </div>
+      <!-- row and column -->
       </div>
     </div>
+  <!-- container -->
   </div>
 
+  <!-- Reply modal -->
   <div id="friend-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
   
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h3 class="modal-title">Your New Friend</h3>
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
         </div>
         <div class="modal-body">
           <h4 id="friend-name"></h4>
@@ -255,12 +276,15 @@
     </div>
   </div>
 
+  <!-- logic for interacting with the server -->
   <script type="text/javascript">
+
+$("#find-btn").on("click", function(event) {
+  event.preventDefault();
 
   // TODO: Add data validation
   
-    $("#find-btn").on("click", function(event) {
-      event.preventDefault();
+      // make a newFriend from the form
       var newFriend = {
         name: $("#name").val().trim(),
         image: $("#image-link").val().trim(),
@@ -278,15 +302,23 @@
         ]
       };
 
+      // POST the results to the api
       $.post("/api/friends", newFriend)
         .then(function(data) {
 
+          // log the match out
           console.log("survey.html", JSON.stringify(data));
-
+          
+          // put the info in the document
           $('#friend-name').text(data.name);
           $('#friend-img').attr('src' , data.image);
-
+          
+          // activate the modal
           $('#friend-modal').modal('toggle');
+          
+          // clear the form
+          $('input:radio').prop('checked', false);
+          $('input:text').val("");
         });
     });
   </script>

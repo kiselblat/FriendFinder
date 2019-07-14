@@ -35,6 +35,7 @@
 
           <div class="card-header">
             <h3><strong>Survey Questions</strong></h3>
+            <p><strong>One (1), disagree strongly. Five (5), strongly agree</strong></p>
           </div>
 
           <div class="card-body">
@@ -54,7 +55,7 @@
               <!-- TODO: Add Questions -->
 
               <h3><strong>Question One</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Would you like to play a game?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-one" value="1">1</input>
               </div>
@@ -72,7 +73,7 @@
               </div>
 
               <h3><strong>Question Two</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Is environmental responsibility is important to you?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-two" value="1">1</input>
               </div>
@@ -90,7 +91,7 @@
               </div>
 
               <h3><strong>Question Three</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Do you frequently derive satisfaction from sensory input?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-three" value="1">1</input>
               </div>
@@ -108,7 +109,7 @@
               </div>
 
               <h3><strong>Question Four</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Do you believe that other people are worth emulating?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-four" value="1">1</input>
               </div>
@@ -126,7 +127,7 @@
               </div>
 
               <h3><strong>Question Five</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Do you consider yourself helpful?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-five" value="1">1</input>
               </div>
@@ -144,7 +145,7 @@
               </div>
 
               <h3><strong>Question Six</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Are you comfortable stretching the truth at times?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-six" value="1">1</input>
               </div>
@@ -162,7 +163,7 @@
               </div>
 
               <h3><strong>Question Seven</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Do you often find yourself fascinated by human behavior?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-seven" value="1">1</input>
               </div>
@@ -180,7 +181,7 @@
               </div>
 
               <h3><strong>Question Eight</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Are you often struck by the urge to crush, kill, or destroy?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-eight" value="1">1</input>
               </div>
@@ -198,7 +199,7 @@
               </div>
 
               <h3><strong>Question Nine</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Do you like kids?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-nine" value="1">1</input>
               </div>
@@ -216,7 +217,7 @@
               </div>
 
               <h3><strong>Question Ten</strong></h3>
-              <h4>This is the n question</h4>
+              <h4>Do you take instructions well?</h4>
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="survey-ten" value="1">1</input>
               </div>
@@ -265,14 +266,14 @@
           <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
         </div>
         <div class="modal-body">
-          <h4 id="friend-name"></h4>
-          <img id="friend-img" src="../data/images/batplaceholder.jpg">
+          <h4 id="friend-name">Placeholder</h4>
+          <img id="friend-img" src="./app/data/images/batplaceholder.jpg">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-  
+
     </div>
   </div>
 
@@ -287,7 +288,7 @@ $("#find-btn").on("click", function(event) {
       // make a newFriend from the form
       var newFriend = {
         name: $("#name").val().trim(),
-        image: $("#image-link").val().trim(),
+        photo: $("#image-link").val().trim(),
         scores: [
           $('input[name=survey-one]:checked').val(),
           $('input[name=survey-two]:checked').val(),
@@ -311,7 +312,7 @@ $("#find-btn").on("click", function(event) {
           
           // put the info in the document
           $('#friend-name').text(data.name);
-          $('#friend-img').attr('src' , data.image);
+          $('#friend-img').attr('src' , data.photo);
           
           // activate the modal
           $('#friend-modal').modal('toggle');

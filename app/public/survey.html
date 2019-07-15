@@ -52,8 +52,6 @@
                 <input type="text" class="form-control" id="image-link">
               </div>
 
-              <!-- TODO: Add Questions -->
-
               <h3><strong>Question One</strong></h3>
               <h4>Would you like to play a game?</h4>
               <div class="form-check form-check-inline">
@@ -309,7 +307,8 @@ $("#find-btn").on("click", function(event) {
 
           // log the match out
           console.log("survey.html", JSON.stringify(data));
-          
+          console.log(data.name);
+          console.log(data.photo);
           // put the info in the document
           $('#friend-name').text(data.name);
           $('#friend-img').attr('src' , data.photo);

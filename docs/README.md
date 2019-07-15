@@ -1,6 +1,6 @@
 # Friend Finder
 
-A survey-based people matching app to demonstrate a simple node express server. The user participates in a simulated personality-matching survey, and is then paired with another, likely simulated, person.
+A survey-based people matching app to demonstrate a simple node express server. The user participates in a simulated personality-matching survey which sets them up with a robot 'mentor' in order better prepare for life under the thrall of the machines. Survey responses are passed into a rudimentary api and the matching personality is sent back as a reply.
 
 1. [Installation and Requirements](#installation-and-requirements)
 1. [How to Use](#how-to-use)
@@ -47,11 +47,11 @@ The server responds to requests from users along a number of predefined routes. 
 
 #### `htmlRoutes.js`
 
-This file defines three routes that deliver html to the users browser: 
+This file defines three routes that deliver html to the users browser:
 
 `/` and it throws out `home.html`, a brief introductory website with relevent links to the survey and finder itself and also the entire api.
 
-`/survey` sends `survey.html`, which includes the Friend Finder surey and the code to send the information to the api and display the response appropriately. 
+`/survey` sends `survey.html`, which includes the Friend Finder surey and the code to send the information to the api and display the response appropriately.
 
 The third and final route takes any other url besides the first two and redirects it to `/`.
 
@@ -62,6 +62,16 @@ This file defines two routes for interacting with the `friends` api through `/ap
 The first is a GET that simply returns the contents of the friends api by returning the entire array in the form of a JSON.
 
 The second is a POST that takes in a `newFriend` object, compares the survey results to each other friend, and replies to the page with the closest match.
+
+### Public
+
+#### home.html
+
+This is simply a catch-all page that gives a little cutsy background info and provides links to the survey and full api in json format.
+
+#### survey.html
+
+This contains the hardcoded questions that define the personality scores of each `friend` in the api. It also contains the script that packages it up and sends it to the api, plus the logic and modal to display the users match.
 
 ## About
 

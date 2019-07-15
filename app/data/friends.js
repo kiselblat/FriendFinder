@@ -1,8 +1,7 @@
 var friends = [
-  // TODO: Add friends
   {
     "name": "Deep Thought",
-    "photo": "./app/data/images/deep-thought.png",
+    "photo": "https://kiselblat.github.io/heap/images/robots/deep-thought.png",
     "scores": [
         4,
         3,
@@ -17,7 +16,7 @@ var friends = [
       ]
   },{
     "name": "Lieutenant Commander Data",
-    "photo": "./app/data/images/Data_2366.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/Data_2366.jpg",
     "scores": [
         3,
         4,
@@ -32,7 +31,7 @@ var friends = [
       ]
   },{
     "name": "Gort",
-    "photo": "./app/data/images/Gort.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/Gort.jpg",
     "scores": [
         1,
         5,
@@ -47,7 +46,7 @@ var friends = [
       ]
   },{
     "name": "HAL-9000",
-    "photo": "./app/data/images/HAL.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/HAL.jpg",
     "scores": [
         4,
         3,
@@ -62,7 +61,7 @@ var friends = [
       ]
   },{
     "name": "Johnny Number 5",
-    "photo": "./app/data/images/Johnny_5.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/Johnny_5.jpg",
     "scores": [
         4,
         3,
@@ -77,7 +76,7 @@ var friends = [
       ]
   },{
     "name": "Marvin the Paranoid Android",
-    "photo": "./app/data/images/Marvin_(HHGG).jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/Marvin_(HHGG).jpg",
     "scores": [
         1,
         1,
@@ -92,7 +91,7 @@ var friends = [
       ]
   },{
     "name": "Robby the Robot",
-    "photo": "./app/data/images/robby.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/robby.jpg",
     "scores": [
         3,
         3,
@@ -107,7 +106,7 @@ var friends = [
       ]
   },{
     "name": "Class M-3 Model B-9 General Utility Non-Theorizing Environmental Control Robot",
-    "photo": "./app/data/images/Robot.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/Robot.jpg",
     "scores": [
         4,
         4,
@@ -122,7 +121,7 @@ var friends = [
       ]
   },{
     "name": "Rosie the Robot Maid",
-    "photo": "./app/data/images/rosie.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/rosie.jpg",
     "scores": [
         3,
         4,
@@ -137,7 +136,7 @@ var friends = [
       ]
   },{
     "name": "Joshua, a.k.a. WOPR",
-    "photo": "./app/data/images/WOPR.jpg",
+    "photo": "https://kiselblat.github.io/heap/images/robots/WOPR.jpg",
     "scores": [
         5,
         2,
